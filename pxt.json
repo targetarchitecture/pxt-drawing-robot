@@ -1,5 +1,5 @@
 {
-    "name": "Drawing Robot 2",
+    "name": "Drawing Robot",
     "description": "",
     "dependencies": {
         "core": "*",
