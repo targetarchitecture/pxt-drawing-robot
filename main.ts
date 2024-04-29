@@ -22,6 +22,7 @@ let x = 0
 
 serial.redirectToUSB()
 irRemote.connectInfrared(DigitalPin.P16)
+k_Bit.carStop();
 
 // basic.forever(function () {
 //     x = irRemote.returnIrButton()
@@ -29,7 +30,8 @@ irRemote.connectInfrared(DigitalPin.P16)
 //     basic.pause(110)
 // })
 
-let strip = neopixel.create(DigitalPin.P5, 18, NeoPixelMode.RGB)
+k_Bit.LED_brightness(50)
+k_Bit.Led(COLOR.blue)
 
 let val = 0
 
@@ -37,23 +39,28 @@ basic.forever(function () {
 
     val = irRemote.returnIrButton()
 
-    if (val != 0) {
-
-
-        if (val == 70) {
-            k_Bit.run(DIR.RunForward,40)
-   
-        } else if (val = 68) {
-
-
-        } else if (val == 67) {
-            k_Bit.Motor(MotorObs.LeftSide, MotorDir.Forward, 35)
-
-        } else if (val == 21) {
-
-
-        } else if (val == 64) {
-            k_Bit.carStop();
-        }
+    if (val == 0) {
+        k_Bit.carStop();
+        k_Bit.Led(COLOR.black)
     }
+    else if (val == 70) {
+        k_Bit.run(DIR.RunForward, 10)
+        k_Bit.Led(COLOR.green)
+    } 
+    else if (val == 68) {
+        k_Bit.Motor(MotorObs.LeftSide, MotorDir.Back,10)
+        k_Bit.Motor(MotorObs.RightSide, MotorDir.Forward, 10)
+        k_Bit.Led(COLOR.blue)
+    } 
+    else if (val == 67) {
+        k_Bit.Motor(MotorObs.LeftSide, MotorDir.Forward, 10)
+        k_Bit.Motor(MotorObs.RightSide, MotorDir.Back, 10)
+        k_Bit.Led(COLOR.white)
+    } 
+    else if (val == 21) {
+        k_Bit.run(DIR.RunBack, 10)
+        k_Bit.Led(COLOR.red)
+    }
+
+    basic.pause(110)
 })
