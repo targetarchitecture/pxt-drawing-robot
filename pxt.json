@@ -5,7 +5,7 @@
         "core": "*",
         "microphone": "*",
         "vl53l0x-distance": "github:tinkertanker/pxt-range-vl53l0x#v1.0.1",
-        "sBrick fixed": "github:targetarchitecture/pxt-tca9548a-i2c-multiplexer#v1.1.0"
+        "TCA9548A i2c multiplexer": "github:targetarchitecture/pxt-tca9548a-i2c-multiplexer#v1.0.1"
     },
     "files": [
         "main.blocks",
