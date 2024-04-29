@@ -1,11 +1,11 @@
-/**
- * Channel 2 = 1<<2
- * 
- * Channel 3 = 1<<3
- * 
- * Channel 4 = 1<<4
- */
 let x = 0
+pins.i2cWriteNumber(
+112,
+0,
+NumberFormat.UInt8BE,
+false
+)
+control.waitMicros(50)
 pins.i2cWriteNumber(
 112,
 1 << 2,
@@ -13,6 +13,7 @@ NumberFormat.UInt8BE,
 false
 )
 control.waitMicros(50)
+Rangefinder.init()
 pins.i2cWriteNumber(
 112,
 1 << 3,
@@ -20,26 +21,13 @@ NumberFormat.UInt8BE,
 false
 )
 control.waitMicros(50)
-pins.i2cWriteNumber(
-112,
-1 << 4,
-NumberFormat.UInt8BE,
-false
-)
-control.waitMicros(50)
 Rangefinder.init()
+
 basic.forever(function () {
+    x=0
     serial.writeString("" + ("----\r\n"))
-    serial.writeString("" + control.millis() + "\r\n")
-    pins.i2cWriteNumber(
-    112,
-    1 << 2,
-    NumberFormat.UInt8BE,
-    false
-    )
-    control.waitMicros(50)
-    x = x + Rangefinder.distance()
-    serial.writeString("" + control.millis() + "\r\n")
+    serial.writeString("start of loop" + control.millis() + "\r\n")
+
     pins.i2cWriteNumber(
     112,
     1 << 3,
@@ -48,7 +36,7 @@ basic.forever(function () {
     )
     control.waitMicros(50)
     x = x + Rangefinder.distance()
-    serial.writeString("" + control.millis() + "\r\n")
+    serial.writeString("ToF 3:" + control.millis() + "\r\n")
     pins.i2cWriteNumber(
     112,
     1 << 4,
@@ -57,11 +45,11 @@ basic.forever(function () {
     )
     control.waitMicros(50)
     x = x + Rangefinder.distance()
-    serial.writeString("" + control.millis() + "\r\n")
+    serial.writeString("ToF 4:" + control.millis() + "\r\n")
     led.plotBarGraph(
     x,
     1500
     )
-    serial.writeString("" + control.millis() + "\r\n")
-    basic.pause(1000)
+    serial.writeString("end of plotBarGraph:" + control.millis() + "\r\n")
+    basic.pause(100)
 })
