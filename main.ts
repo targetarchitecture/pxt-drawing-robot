@@ -3,8 +3,15 @@
 // Rangefinder.init()
 // TCA9548A.selectChannel(1)
 // Rangefinder.init()
-TCA9548A.selectChannel(3)
+
+// pins.i2cWriteNumber(0x70, 1<<2, NumberFormat.UInt8BE)
+// control.waitMicros(50)
+// Rangefinder.init()
+
+pins.i2cWriteNumber(0x70, 1 << 7, NumberFormat.UInt8BE)
+control.waitMicros(50)
 Rangefinder.init()
+
 // TCA9548A.selectChannel(3)
 // Rangefinder.init()
 // TCA9548A.selectChannel(4)
@@ -25,7 +32,9 @@ basic.forever(function () {
     // TCA9548A.selectChannel(1)
     // x = x + Rangefinder.distance()
 
-    TCA9548A.selectChannel(3)
+    pins.i2cWriteNumber(0x70, 1 << 7, NumberFormat.UInt8BE)
+    control.waitMicros(50)
+
     x =  Rangefinder.distance()
 
     // TCA9548A.selectChannel(3)
