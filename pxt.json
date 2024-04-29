@@ -5,7 +5,8 @@
         "core": "*",
         "microphone": "*",
         "vl53l0x-distance": "github:tinkertanker/pxt-range-vl53l0x#v1.0.1",
-        "TCA9548A i2c multiplexer": "github:targetarchitecture/pxt-tca9548a-i2c-multiplexer#v1.0.3"
+        "TCA9548A i2c multiplexer": "github:targetarchitecture/pxt-tca9548a-i2c-multiplexer#v1.0.3",
+        "pxt-k-bit": "github:mworkfun/pxt-k-bit#v1.0.0"
     },
     "files": [
         "main.blocks",
