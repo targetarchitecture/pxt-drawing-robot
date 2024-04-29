@@ -1,38 +1,52 @@
-let c5 = 0
 
-for (let i = 1; i <= 7; i++) {
-    TCA9548A.selectChannel(i)
-    Rangefinder.init()
-}
+TCA9548A.selectChannel(0)
+Rangefinder.init()
+TCA9548A.selectChannel(1)
+Rangefinder.init()
+TCA9548A.selectChannel(2)
+Rangefinder.init()
+TCA9548A.selectChannel(3)
+Rangefinder.init()
+TCA9548A.selectChannel(4)
+Rangefinder.init()
+TCA9548A.selectChannel(5)
+Rangefinder.init()
+TCA9548A.selectChannel(6)
+Rangefinder.init()
+TCA9548A.selectChannel(7)
+Rangefinder.init()
 
-
-/**
- * TCA9548A.selectChannel(6)
- * 
- * Rangefinder.init()
- * 
- * TCA9548A.selectChannel(7)
- * 
- * Rangefinder.init()
- */
 basic.forever(function () {
-    let c7 = 0
-    let c6 = 0
 
- 
-    for (let i = 1; i <= 7; i++) {
-   
+let x=0
+    TCA9548A.selectChannel(0)
+    x =x+ Rangefinder.distance()
 
-    TCA9548A.selectChannel(i)
-c5 = Rangefinder.distance()
-    // TCA9548A.selectChannel(6)
-    // c6 = Rangefinder.distance()
-    // TCA9548A.selectChannel(7)
-    // c7 = Rangefinder.distance()
+    TCA9548A.selectChannel(1)
+    x = x + Rangefinder.distance()
+
+    TCA9548A.selectChannel(2)
+    x = x + Rangefinder.distance()
+
+    TCA9548A.selectChannel(3)
+    x = x + Rangefinder.distance()
+
+    TCA9548A.selectChannel(4)
+    x = x + Rangefinder.distance()
+
+    TCA9548A.selectChannel(5)
+    x = x + Rangefinder.distance()
+
+    TCA9548A.selectChannel(6)
+    x = x + Rangefinder.distance()
+
+    TCA9548A.selectChannel(7)
+    x = x + Rangefinder.distance()
+
     led.plotBarGraph(
-    c5 + c6 + c7,
+    x,
     1000
     )
-    }
+
     basic.pause(100)
 })
