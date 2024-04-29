@@ -4,7 +4,8 @@
     "dependencies": {
         "core": "*",
         "microphone": "*",
-        "vl53l0x-distance": "github:tinkertanker/pxt-range-vl53l0x#v1.0.1"
+        "vl53l0x-distance": "github:tinkertanker/pxt-range-vl53l0x#v1.0.1",
+        "TCA9548A i2c multiplexer": "github:targetarchitecture/pxt-tca9548a-i2c-multiplexer#v1.0.2"
     },
     "files": [
         "main.blocks",
@@ -21,5 +22,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "tsprj"
+    "preferredEditor": "blocksprj"
 }
