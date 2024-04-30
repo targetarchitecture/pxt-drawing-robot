@@ -12,13 +12,13 @@ basic.showNumber(speed)
 
 input.onButtonPressed(Button.A, function() {
     speed+=10
-    speed = Math.max(speed,100)
+    speed = Math.min(speed,100)
     basic.showNumber(speed)
 })
 
 input.onButtonPressed(Button.B, function () {
     speed -= 10
-    speed = Math.min(speed, 10)
+    speed = Math.max(speed, 10)
     basic.showNumber(speed)
 })
 
