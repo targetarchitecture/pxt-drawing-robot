@@ -6,7 +6,8 @@
         "microphone": "*",
         "vl53l0x-distance": "github:tinkertanker/pxt-range-vl53l0x#v1.0.1",
         "TCA9548A i2c multiplexer": "github:targetarchitecture/pxt-tca9548a-i2c-multiplexer#v1.0.3",
-        "pxt-k-bit": "github:mworkfun/pxt-k-bit#v1.0.0"
+        "pxt-k-bit": "github:mworkfun/pxt-k-bit#v1.0.0",
+        "Dualsense to Microbit": "github:targetarchitecture/pxt-dualsense-ble-esp32-i2c-microbit#f4cf50c93ebac3b370d5942d470d50259a3864a0"
     },
     "files": [
         "main.blocks",
@@ -17,7 +18,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "6.0.26",
+        "target": "6.0.27",
         "targetId": "microbit"
     },
     "supportedTargets": [

@@ -51,7 +51,7 @@ basic.forever(function () {
         k_Bit.Motor(MotorObs.RightSide, MotorDir.Forward, speed)
         k_Bit.Led(COLOR.red)
     }
-    else if (val == 66 || val ==74) {
+    else if (val == 66 || val == 74) {
         selfDriving = !selfDriving
     }
     else {
@@ -68,19 +68,19 @@ basic.forever(function () {
             k_Bit.Motor(MotorObs.RightSide, MotorDir.Forward, speed)
             k_Bit.Led(COLOR.red)
         }
-       else if (k_Bit.obstacle(MotorObs.LeftSide) == 1 && k_Bit.obstacle(MotorObs.RightSide) == 1) {
+        else if (k_Bit.obstacle(MotorObs.LeftSide) == 1 && k_Bit.obstacle(MotorObs.RightSide) == 1) {
             k_Bit.Motor(MotorObs.LeftSide, MotorDir.Back, speed)
             k_Bit.Motor(MotorObs.RightSide, MotorDir.Back, speed)
             k_Bit.Led(COLOR.green)
             basic.pause(400)
         }
-        else  if (k_Bit.obstacle(MotorObs.LeftSide) == 1 && k_Bit.obstacle(MotorObs.RightSide) == 0) {
+        else if (k_Bit.obstacle(MotorObs.LeftSide) == 1 && k_Bit.obstacle(MotorObs.RightSide) == 0) {
             k_Bit.Motor(MotorObs.LeftSide, MotorDir.Forward, speed)
-            k_Bit.Motor(MotorObs.RightSide, MotorDir.Back, speed)            
+            k_Bit.Motor(MotorObs.RightSide, MotorDir.Back, speed)
             k_Bit.Led(COLOR.white)
             basic.pause(400)
         }
-        else  if (k_Bit.obstacle(MotorObs.LeftSide) == 0 && k_Bit.obstacle(MotorObs.RightSide) == 1) {
+        else if (k_Bit.obstacle(MotorObs.LeftSide) == 0 && k_Bit.obstacle(MotorObs.RightSide) == 1) {
             k_Bit.Motor(MotorObs.LeftSide, MotorDir.Back, speed)
             k_Bit.Motor(MotorObs.RightSide, MotorDir.Forward, speed)
             k_Bit.Led(COLOR.blue)
@@ -89,8 +89,12 @@ basic.forever(function () {
             k_Bit.Motor(MotorObs.LeftSide, MotorDir.Back, 0)
             k_Bit.Motor(MotorObs.RightSide, MotorDir.Forward, 0)
             k_Bit.Led(COLOR.black)
-        }    }
+        }
+    }
 
+    /* New Dualsense library */
+    dualsense.axisRightState()
+    dualsense.buttonState()
 
     basic.pause(100)
 })
