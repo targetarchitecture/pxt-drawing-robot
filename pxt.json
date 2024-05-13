@@ -7,7 +7,7 @@
         "vl53l0x-distance": "github:tinkertanker/pxt-range-vl53l0x#v1.0.1",
         "TCA9548A i2c multiplexer": "github:targetarchitecture/pxt-tca9548a-i2c-multiplexer#v1.0.3",
         "pxt-k-bit": "github:mworkfun/pxt-k-bit#v1.0.0",
-        "Dualsense to Microbit": "github:targetarchitecture/pxt-dualsense-ble-esp32-i2c-microbit#1bf89f51db7abe0bb85ec45fcdb8829ccbbe0ea6"
+        "Dualsense to Microbit": "github:targetarchitecture/pxt-dualsense-ble-esp32-i2c-microbit#24fa6030daa7f92820dc20f09d1b6e094a5c7206"
     },
     "files": [
         "main.blocks",
