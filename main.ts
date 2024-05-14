@@ -25,6 +25,10 @@ input.onButtonPressed(Button.B, function () {
     basic.showNumber(speed)
 })
 
+dualsense.onClicked(dualsense.Pins.P0, function() {    
+    led.toggle(2, 2)
+})
+
 let selfDriving = false;
 
 basic.forever(function () {
@@ -92,9 +96,15 @@ basic.forever(function () {
         }
     }
 
+    basic.pause(100)
+})
+
+
+basic.forever(function () {
     /* New Dualsense library */
     dualsense.axisRightState()
     dualsense.buttonState()
 
     basic.pause(100)
 })
+
