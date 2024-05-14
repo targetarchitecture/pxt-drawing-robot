@@ -7,15 +7,18 @@ input.onButtonPressed(Button.A, function () {
     speed = Math.min(speed, 100)
     basic.showNumber(speed)
 })
+
 // serial.writeNumber(Math.random())
 dualsense.onClicked(dualsense.Buttons.B, function () {
     led.toggle(2, 2)
 })
+
 input.onButtonPressed(Button.B, function () {
     speed += 0 - 10
     speed = Math.max(speed, 10)
     basic.showNumber(speed)
 })
+
 let selfDriving = false
 let val = 0
 let speed = 0
