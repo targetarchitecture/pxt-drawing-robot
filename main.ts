@@ -1,16 +1,20 @@
 dualsense.onClicked(dualsense.Buttons.A, function () {
     led.toggle(0, 0)
 })
+
 // basic.showNumber(speed)
 input.onButtonPressed(Button.A, function () {
     speed += 10
     speed = Math.min(speed, 100)
     basic.showNumber(speed)
+    dualsense.colour(255, 0, 155)
+    dualsense.led(4)
 })
 
-// serial.writeNumber(Math.random())
 dualsense.onClicked(dualsense.Buttons.B, function () {
     led.toggle(2, 2)
+    dualsense.rumble
+    dualsense.led(2)
 })
 
 input.onButtonPressed(Button.B, function () {
@@ -83,9 +87,6 @@ basic.forever(function () {
     }
     basic.pause(100)
 })
-basic.forever(function () {
-    // New Dualsense library
-    dualsense.axisRightState()
-    dualsense.buttonState()
-    basic.pause(50)
-})
+
+
+dualsense.startDualSense();
