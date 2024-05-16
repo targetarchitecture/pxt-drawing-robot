@@ -1,32 +1,18 @@
-dualsense.onClicked(dualsense.Buttons.A, function () {
-    led.toggle(0, 0)
-})
-
 // basic.showNumber(speed)
 input.onButtonPressed(Button.A, function () {
     speed += 10
     speed = Math.min(speed, 100)
     basic.showNumber(speed)
-    dualsense.colour(255, 0, 155)
-    dualsense.led(4)
 })
-
-dualsense.onClicked(dualsense.Buttons.B, function () {
-    led.toggle(2, 2)
-    dualsense.rumble
-    dualsense.led(2)
-})
-
 input.onButtonPressed(Button.B, function () {
     speed += 0 - 10
     speed = Math.max(speed, 10)
     basic.showNumber(speed)
 })
-
 let selfDriving = false
 let val = 0
 let speed = 0
-// serial.redirectToUSB()
+
 irRemote.connectInfrared(DigitalPin.P16)
 led.enable(true)
 k_Bit.Led(COLOR.blue)
@@ -34,6 +20,9 @@ k_Bit.LED_brightness(100)
 k_Bit.Motor(MotorObs.LeftSide, MotorDir.Back, 0)
 k_Bit.Motor(MotorObs.RightSide, MotorDir.Forward, 0)
 speed = 20
+
+dualsense.startDualSense()
+
 basic.forever(function () {
     val = irRemote.returnIrButton()
     if (val == 70) {
@@ -88,5 +77,15 @@ basic.forever(function () {
     basic.pause(100)
 })
 
+dualsense.onClicked(dualsense.Buttons.A, function () {
+    dualsense.rumble();
+})
 
-dualsense.startDualSense();
+dualsense.onClicked(dualsense.Buttons.X, function () {
+    dualsense.led(randint(1, 4))
+})
+
+
+dualsense.onClicked(dualsense.Buttons.B, function () {
+    dualsense.colour(randint(0, 255), randint(0, 255), randint(0, 255))
+})
