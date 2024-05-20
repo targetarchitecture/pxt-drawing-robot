@@ -27,7 +27,7 @@ motorbit.MotorStopAll();
 
 speed = 20
 
-//dualsense.startDualSense()
+dualsense.startDualSense()
 
 // basic.forever(function () {
 //     val = irRemote.returnIrButton()
@@ -83,15 +83,23 @@ speed = 20
 //     basic.pause(100)
 // })
 
-// dualsense.onClicked(dualsense.Buttons.A, function () {
-//     dualsense.rumble();
-// })
+dualsense.onClicked(dualsense.Buttons.A, function () {
+    dualsense.rumble();
+    // motorbit.Setting_the_on_board_lights(Offset.ONE, RgbColors.Red)
+    // motorbit.Setting_the_on_board_lights(Offset.TWO, RgbColors.Green)
+    // motorbit.Setting_the_on_board_lights(Offset.THREE, RgbColors.Blue)
+    // motorbit.Setting_the_on_board_lights(Offset.FOUR, RgbColors.Yellow)
+})
 
-// dualsense.onClicked(dualsense.Buttons.X, function () {
-//     dualsense.led(randint(1, 4))
-// })
+dualsense.onClicked(dualsense.Buttons.X, function () {
+    dualsense.led(randint(1, 4))
+    motorbit.MotorRunDual(motorbit.Motors.M1, 150, motorbit.Motors.M2, 150)
+    motorbit.MotorRunDual(motorbit.Motors.M3, 150, motorbit.Motors.M4, 150)
+    basic.pause(1000)
+    motorbit.MotorStopAll();
+})
 
 
-// dualsense.onClicked(dualsense.Buttons.B, function () {
-//     dualsense.colour(randint(0, 255), randint(0, 255), randint(0, 255))
-// })
+dualsense.onClicked(dualsense.Buttons.B, function () {
+    dualsense.colour(randint(0, 255), randint(0, 255), randint(0, 255))
+})
