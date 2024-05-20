@@ -14,10 +14,16 @@
  let speed = 0
 
 motorbit.Setting_the_on_board_lights(Offset.ONE, RgbColors.Red)
+motorbit.Setting_the_on_board_lights(Offset.TWO, RgbColors.Green)
+motorbit.Setting_the_on_board_lights(Offset.THREE, RgbColors.Blue)
+motorbit.Setting_the_on_board_lights(Offset.FOUR, RgbColors.Yellow)
+
+
 motorbit.MotorRunDual(motorbit.Motors.M1, 150, motorbit.Motors.M2, 150)
+motorbit.MotorRunDual(motorbit.Motors.M3, 150, motorbit.Motors.M4, 150)
 basic.pause(1000)
 motorbit.MotorStopAll();
-motorbit.Setting_the_on_board_lights(Offset.ONE, RgbColors.Red)
+
 
 speed = 20
 
