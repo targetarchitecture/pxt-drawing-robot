@@ -1,7 +1,7 @@
 {
     "name": "Drawing Robot",
     "version": "0.0.1",
-    "description": "",
+    "description": "https://github.com/emakefun/pxt-motorbit/tree/master?tab=readme-ov-file#dc-motor-interface",
     "dependencies": {
         "core": "*",
         "microphone": "*",
