@@ -7,7 +7,7 @@
         "microphone": "*",
         "vl53l0x-distance": "github:tinkertanker/pxt-range-vl53l0x#v1.0.1",
         "TCA9548A i2c multiplexer": "github:targetarchitecture/pxt-tca9548a-i2c-multiplexer#v1.0.3",
-        "PS5 DualSense": "github:targetarchitecture/pxt-dualsense-ble-esp32-i2c-microbit#v1.1.1",
+        "PS5 DualSense": "github:targetarchitecture/pxt-dualsense-ble-esp32-i2c-microbit#v1.1.2",
         "motorbit": "github:emakefun/pxt-motorbit#1ac2d9e6a49b099b72b5396f5e35a57687de3b79"
     },
     "files": [

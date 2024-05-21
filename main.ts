@@ -29,6 +29,17 @@ speed = 20
 
 dualsense.startDualSense()
 
+basic.forever(function () {
+    if (dualsense.DPAD_UP_PRESSED == 1 ){
+        motorbit.MotorRunDual(motorbit.Motors.M1, 150, motorbit.Motors.M2, 150)
+        motorbit.MotorRunDual(motorbit.Motors.M3, 150, motorbit.Motors.M4, 150)
+    } else {
+        motorbit.MotorStopAll();
+    }
+
+    basic.pause(200)
+})
+
 // basic.forever(function () {
 //     val = irRemote.returnIrButton()
 //     if (val == 70) {
